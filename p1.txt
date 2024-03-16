@@ -1,0 +1,40 @@
+package java22scheme; 
+import java.util.Scanner; 
+public class MatrixAddition { 
+public static void main(String[] args) { 
+// Reading the order N of the matrix from the user 
+Scanner scanner = new Scanner(System.in); 
+System.out.print("Enter the order N of the matrices: "); 
+int order = scanner.nextInt(); 
+// Create two matrices 
+int[][] matrixA = new int[order][order]; 
+int[][] matrixB = new int[order][order]; 
+int[][] resultMatrix = new int[order][order]; 
+// Reading in the elements into matrix A 
+System.out.println("Enter the elements for matrix A:"); 
+for (int i = 0; i < order; i++) { 
+for (int j = 0; j < order; j++) { 
+System.out.print("Enter element at position(" + (i + 1) + ", " + (j + 1) + "): "); 
+matrixA[i][j] = scanner.nextInt(); } 
+} 
+// Reading in the elements into matrix B 
+System.out.println("Enter the elements for matrix B:"); 
+for (int i = 0; i < order; i++) { 
+for (int j = 0; j < order; j++) { 
+System.out.print("Enter element at position(" + (i + 1) + ", " + (j + 1) + "): ");
+matrixB[i][j] = scanner.nextInt();} 
+} 
+// Adding matrices A and B 
+for (int i = 0; i < order; i++) { 
+for (int j = 0; j < order; j++) { 
+resultMatrix[i][j] = matrixA[i][j] + matrixB[i][j]; } } 
+// Displaying the result matrix 
+System.out.println("The sum of the two matrices is:"); 
+for (int i = 0; i < order; i++) { 
+for (int j = 0; j < order; j++) { 
+System.out.print(resultMatrix[i][j] + " ");} 
+System.out.println(); } 
+// Close the Scanner to prevent resource leak 
+scanner.close(); 
+} 
+}
